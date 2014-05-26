@@ -1,7 +1,59 @@
 <div data-options="dxView : { name: 'createlecture', title: 'Create' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxScrollView: {}">
-        	Hier werden Veranstaltungen erstellt.
-	</div>
+
+        <div class="dx-fieldset">
+            <div class="dx-field" >    
+                <div class="dx-field-label" >Name</div>
+                <div class="autocomplete" data-bind="dxAutocomplete: {
+                    dataSource: AllLectures,
+                    displayExpr: 'lecture',
+                    placeholder: 'Type lecture name'
+                    }">
+                    <div data-options="dxTemplate: {name: 'item'}">
+                        <b data-bind="text: lecture"></b><br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="dx-field" >  
+                <div class="dx-field-label">Raum</div>    
+                <div class="dx-field-value" data-bind="
+                    dxTextBox: { placeholder: raumDescription }"></div>  
+            </div>
+
+            <div class="dx-field" >  
+                <div class="dx-field-label">Uhrzeit</div>    
+                <div class="dx-field-value" data-bind="
+                    dxDateBox: { value: time, format: 'time' }"></div>  
+            </div>
+
+            <div class="dx-field" >  
+                <div class="dx-field-label">Wochentag</div>    
+                <div class="dx-field-value" data-bind="dxSelectBox: {
+                    dataSource: Weekdays,
+                    displayExpr: 'name',
+                    value: name
+                }"></div>
+            </div>
+            <div class="dx-field" >  
+                <div class="dx-field-label">Turnus</div>    
+                <div class="dx-field-value" data-bind="dxSelectBox: {
+                    dataSource: Turnus,
+                    displayExpr: 'name',
+                    value: name
+                }"></div>
+            </div>
+            <div class="button" data-bind="dxButton:{text:'Create', clickAction: buttonClicked, icon: 'add'}"></div>
+        </div>
+        <!-- <div style="text-align: center"> -->
+
+        <!-- </div> -->
+        
+
     </div>
+            
+    </div>
+</div>
+</div>
 </div>
