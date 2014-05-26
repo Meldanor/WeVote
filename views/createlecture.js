@@ -18,5 +18,5 @@ Turnus = [
 ];
 
 buttonClicked = function(){
-    DevExpress.ui.notify("The button is clicked", "success", 1000);
+    DevExpress.ui.notify("Lecture created", "success", 1000);
 };
