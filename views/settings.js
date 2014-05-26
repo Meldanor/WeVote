@@ -1,0 +1,1 @@
+﻿var askingFeedback = ko.observable(false);

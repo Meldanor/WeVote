@@ -18,14 +18,19 @@
                 icon: "info"
               },
               {
+                title: "Calendar",
+                action: "#calendar",
+                icon: "event"
+              },
+              {
                 title: "Create",
                 action: "#createlecture",
                 icon: "add"
               },
               {
-                title: "Calendar",
-                action: "#calendar",
-                icon: "event"
+                title: "Settings",
+                action: "#settings",
+                icon: "preferences"
               }
             ]
         });
