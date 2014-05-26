@@ -1,8 +1,17 @@
 ﻿<div data-options="dxView : { name: 'overview', title: 'Overview' } " >
-    <div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
-        <ul>
-        	<li>Informationsvisualisierung</li>
-        	<li>Interaktive Systeme</li>
-        </ul>
-    </div>
+	<div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
+
+		<div data-bind="dxList: { dataSource: Lectures, grouped: true }">  
+			<div data-options="dxTemplate:{ name:'group' }">
+				<h1 data-bind="text: key"></h1>
+			</div>
+			<div class="listItem" data-options="dxTemplate:{ name:'item' }">
+				<div style="display:inline-block; margin: 5px;">
+					<p style="font-size:larger;"><b data-bind="text: name"></b></p>
+				</div>
+				<p>Votiert: <i data-bind="text: voted"></i>/<i data-bind="text: possible"></i></p>
+			</div>
+
+		</div>
+	</div>
 </div>
