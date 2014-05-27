@@ -1,7 +1,7 @@
 ﻿<div data-options="dxView : { name: 'overview', title: 'Overview' } " >
 	<div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
 
-		<div data-bind="dxList: { dataSource: Lectures, grouped: true }">  
+		<div data-bind="dxList: { dataSource: Lectures, grouped: true, activeStateEnabled: false }">  
 			<div data-options="dxTemplate:{ name:'group' }">
 				<h1 data-bind="text: key"></h1>
 			</div>
@@ -9,9 +9,33 @@
 				<div style="display:inline-block; margin: 5px;">
 					<p style="font-size:larger;"><b data-bind="text: name"></b></p>
 				</div>
-				<p>Votiert: <i data-bind="text: voted"></i> / <i data-bind="text: possible"></i></p>
+				<p></p>
+				Votiert: <i data-bind="text: voted"></i> / <i data-bind="text: possible"></i>
+				<div class="button" style="float: right;" data-bind="dxButton:{text:'Vote', clickAction: showVotingPopup, icon: 'plus', height: '30%'}"></div>
 			</div>
 
+
+
 		</div>
+
+	    <div data-bind="dxPopup: { height: 'auto', visible: popupVisible }">
+	        <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+	            <h2>Vote</h2>
+	        </div>
+	        <div data-options="dxTemplate : { name: 'content' } ">
+                <div class="dx-field" >  
+	                <div class="dx-field-label">Voted</div> 
+	                <div data-bind="dxNumberBox:{value: nowPossible,width: '50px'}"></div>
+            	</div>
+                <div class="dx-field" >  
+	                <div class="dx-field-label">Possible</div>    
+	                <div data-bind="dxNumberBox:{value: nowVoted,width: '50px'}"></div>
+            	</div>
+
+                <div data-bind="dxButton: { text: 'Vote', clickAction: vote }"></div>
+                <div data-bind="dxButton: { text: 'Cancel', clickAction: cancelVote }"></div>
+	        </div>
+	        
+	    </div>
 	</div>
 </div>
