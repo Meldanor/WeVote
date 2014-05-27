@@ -14,5 +14,5 @@ cancelVote = function(){
     DevExpress.ui.notify("Vote canceled!", "info", 1000);
 };
 
-nowVoted = 0;
-nowPossible = 0;
+nowVoted = ko.observable(0);
+nowPossible = ko.observable(0);

@@ -18,22 +18,18 @@
 
 		</div>
 
-	    <div data-bind="dxPopup: { height: 'auto', visible: popupVisible }">
+	    <div data-bind="dxPopup: { height: 'auto', visible: popupVisible, closeOnOutsideClick: true }">
 	        <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
 	            <h2>Vote</h2>
 	        </div>
 	        <div data-options="dxTemplate : { name: 'content' } ">
-                <div class="dx-field" >  
-	                <div class="dx-field-label">Voted</div> 
-	                <div data-bind="dxNumberBox:{value: nowPossible,width: '50px'}"></div>
+                <div style="" class="dx-field" >
+	                <div style="float: left;margin-left: 10%;" data-bind="dxNumberBox:{value: nowPossible, width: '50px'}"></div>
+	                <div style="float: right;margin-right: 10%;" data-bind="dxNumberBox:{value: nowVoted, width: '50px'}"></div>
             	</div>
-                <div class="dx-field" >  
-	                <div class="dx-field-label">Possible</div>    
-	                <div data-bind="dxNumberBox:{value: nowVoted,width: '50px'}"></div>
-            	</div>
-
-                <div data-bind="dxButton: { text: 'Vote', clickAction: vote }"></div>
-                <div data-bind="dxButton: { text: 'Cancel', clickAction: cancelVote }"></div>
+              	<p></p>
+                <div style="float: left;" data-bind="dxButton: { text: 'Vote', clickAction: vote, width: '40%' }"></div>
+                <div style="float: right;" data-bind="dxButton: { text: 'Cancel', clickAction: cancelVote, width: '40%'}"></div>
 	        </div>
 	        
 	    </div>
