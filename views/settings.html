@@ -7,6 +7,24 @@
 				<div class="dx-field-value" data-bind="dxSwitch: { value: askingFeedback }"></div>
 			</div>
 		</div>
+
+		<hr>
+
+		<center> <div style="margin: 0 auto;" class="button" data-bind="dxButton:{text:'Login', clickAction: showPopup, icon: 'key'}"></div> </center>
+		
+	    <div data-bind="dxPopup: { height: 'auto', visible: popupVisible }">
+	        <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+	            <h2>Login</h2>
+	        </div>
+	        <div data-options="dxTemplate : { name: 'content' } ">
+	            <div class="login-form">
+	                <div data-bind="dxTextBox: { placeholder: 'Login' }"></div>
+	                <div data-bind="dxTextBox: { mode: 'password', placeholder: 'Password' }"></div>                            
+	                <div style="margin-right: 10px" data-bind="dxButton: { text: 'Sign in', clickAction: hidePopup }"></div>                   
+	                <div style="margin-left: 10px"data-bind="dxButton: { text: 'Cancel', clickAction: hidePopup }"></div>
+	            </div>
+	        </div>
+	    </div>
 	</div>
     </div>
 </div>
