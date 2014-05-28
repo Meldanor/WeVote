@@ -9,8 +9,9 @@
 				<div style="display:inline-block; margin: 5px;">
 					<p style="font-size:larger;"><b data-bind="text: name"></b></p>
 				</div>
-				<p></p>
-				Votiert: <i data-bind="text: voted"></i> / <i data-bind="text: possible"></i>
+				<p>Votiert: <i data-bind="text: voted"></i> / <i data-bind="text: possible"></i></p>
+				<!-- Votiert: <i data-bind="text: voted"></i> / <i data-bind="text: possible"></i> -->
+				<p><i data-bind="text: day"></i> <i data-bind="text: time"></i> in <i data-bind="text: room"></i></p>
 				<div class="button" style="float: right;" data-bind="dxButton:{text:'Vote', clickAction: showVotingPopup, icon: 'plus', height: '30%'}"></div>
 			</div>
 
