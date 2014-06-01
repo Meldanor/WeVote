@@ -1,7 +1,85 @@
 ﻿<div data-options="dxView : { name: 'exercise', title: 'Exercise' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxScrollView: {}">
-          Hier sind die komischen Uebungen drine
+        	<div id="teacherview" style="visibility: hidden; display: none">
+        		<div class="dx-fieldset">
+        			<div class="dx-field">
+				        <div data-bind="dxNumberBox: {
+				            min: 1,
+				            max: 100,
+				            value: tasknumbers,
+				            placeholder: 'Aufgaben'
+				        }">
+				        </div>
+        			</div>
+        			<div class="dx-field">
+        				<div data-bind="dxButton: { text: 'Click me', clickAction: startExercise }"></div>
+        			</div>
+        		</div>
+        		<hr>
+        		<div id="votedstudentstable" >
+        			<table width="80%",ruasdles="all">
+	        			<colgroup>
+						    <col >
+						    <col>
+						    <col >
+						    <col >
+					 	</colgroup>
+				 		<thead>
+					  		<tr>
+					  			<th >Name</th>
+					  			<th>1</th>
+					  			<th>2</th>
+					  			<th>3</th>
+					  		</tr>
+				 		</thead>
+				 		<tbody>
+	        				<tr>
+	        					<th>Gaertner, Kilian</th>
+	        					<th>X</th>
+	        					<th>O</th>
+	        					<th>X</th>
+	        				</tr>
+	        				<tr>
+	        					<th>Engelhart, Julien</th>
+	        					<th>X</th>
+	        					<th>X</th>
+	        					<th>X</th>
+	        				</tr>
+	        				<tr>
+	        					<th>Dosenkohl, Hans</th>
+	        					<th>O</th>
+	        					<th>O</th>
+	        					<th>O</th>
+	        				</tr>
+        				</tbody>
+        			</table>
+        		</div>
+        	</div>
+    		<div id="studentview">
+
+    			<table style="margin: 0px auto;" width="50%" >
+	        			<colgroup>
+						    <col>
+						    <col>
+					 	</colgroup>
+				 		<tbody>
+	        				<tr>
+	        					<th>1</th>
+	        					<th><div data-bind="dxCheckBox: { checked: checkedTask1 }"></div></th>
+	        				</tr>
+	        				<tr>
+	        					<th>2</th>
+	        					<th><div data-bind="dxCheckBox: { checked: checkedTask2 }"></div></th>
+	        				</tr>
+	        				<tr>
+	        					<th>3</th>
+	        					<th><div data-bind="dxCheckBox: { checked: checkedTask3 }"></div></th>
+	        				</tr>
+        				</tbody>
+    			</table>
+    			<div style="text-align:center;" data-bind="dxButton: { text: 'Click me', clickAction: buttonClicked }"></div>
+    		</div>
       </div>
   </div>
 </div>
