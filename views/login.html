@@ -1,3 +1,11 @@
+<script type="text/javascript">
+    length = 10;
+    lengthDescription = "10 characters maximum";
+ 
+    passMode = "password";
+    secretDescription = "type a password";
+</script>
+
 <div data-options="dxView : { name: 'login', title: 'Login' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxScrollView: {}">
@@ -5,12 +13,12 @@
         <div class="dx-fieldset">
         <div id = "field1" class="dx-field">    
         <div class="dx-field-label">Username</div>    
-        <div class="dx-field-value" data-bind="dxTextBox: { maxLength: length, placeholder: lengthDescription }"></div>  
+        <div class="dx-field-value" data-bind="dxTextBox: { maxLength: 10, placeholder: 'max 10 chars' }"></div>  
         </div>
 
         <div id = "field2" class="dx-field">
         <div class="dx-field-label">Password</div>
-        <div class="dx-field-value" data-bind="dxTextBox: { mode: passMode, placeholder: secretDescription }"></div> 
+        <div class="dx-field-value" data-bind="dxTextBox: { mode: 'password', placeholder: 'type a password' }"></div> 
         </div> 
 
      
