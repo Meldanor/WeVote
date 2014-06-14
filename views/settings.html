@@ -4,10 +4,13 @@
         <div class="dx-fieldset">
 			<div class="dx-field">
 				<div class="dx-field-label" style="width:50%">Ask for Feedback</div>
-				<div class="dx-field-value" data-bind="dxSwitch: { value: askingFeedback, valueChangeAction: showStatus }"></div>
+				<div class="dx-field-value" data-bind="dxSwitch: { value: askingFeedback, valueChangeAction: changeAskingFeedback }"></div>
+			</div>
+			<div class="dx-field">
+				<div class="dx-field-label" style="width:50%">Is Teacher</div>
+				<div class="dx-field-value" data-bind="dxSwitch: { value: isTeacher}"></div>
 			</div>
 		</div>
-
 		<hr>
 
 		<center> <div style="margin: 0 auto;" class="button" data-bind="dxButton:{text:'Login', clickAction: popup.showPopup, icon: 'key'}"></div> </center>

@@ -7,12 +7,17 @@ WeVote.exercise = function (params) {
     var checkedTask3 = ko.observable(false);
 
     function startExercise() {
-        DevExpress.ui.notify('Exercise startet with ' + tasknumbers + ' tasks', 'success', 2000);
+        DevExpress.ui.notify('Exercise startet with ' + tasknumbers() + ' tasks', 'success', 2000);
     };
 
     function submit () {
         DevExpress.ui.notify('Submited', 'success', 2000);
         
+    };
+
+    function viewShown() {
+        $("#teacherview").toggle(isTeacher());
+        $("#studentview").toggle(!isTeacher());
     }
 
     var viewModel = {
@@ -23,7 +28,8 @@ WeVote.exercise = function (params) {
         checkedTask3: checkedTask3,
 
         startExercise: startExercise,
-        submit: submit
+        submit: submit,
+        viewShown: viewShown
 
     };
     return viewModel;

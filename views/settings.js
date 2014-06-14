@@ -6,9 +6,9 @@
     var username = ko.observable('');
     var password = ko.observable('');
 
-    function showStatus() {
-        DevExpress.ui.notify('Status: '+ askingFeedback(), 'info', 3000);
-    }
+    function changeAskingFeedback() {
+        DevExpress.ui.notify('Asking for Feedback Enabled: '+ askingFeedback(), 'info', 1000);
+    };
 
     var viewModel = {
 
@@ -19,15 +19,14 @@
             },
             hidePopup: function() {
                 this.popup.visible(false);
-                DevExpress.ui.notify('Name: '+ username()+' PW:'+password(), 'success', 3000);
+                DevExpress.ui.notify('Name: '+ username()+' PW: '+password(), 'success', 1000);
             }
         },
 
         askingFeedback: askingFeedback,
-        showStatus: showStatus,
+        changeAskingFeedback: changeAskingFeedback,
         username: username,
         password: password
-
 
     };
     return viewModel;

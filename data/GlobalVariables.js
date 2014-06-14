@@ -1,0 +1,1 @@
+var isTeacher = ko.observable(false);
