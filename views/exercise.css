@@ -1,7 +1,36 @@
-﻿table td:first-child {
+﻿#studentview table td:first-child {
 	text-align: left;
 	vertical-align: middle;
 }
-table td:nth-child(2) {
+#studentview table td:nth-child(2) {
 	text-align: right;
+}
+
+#teacherview h1 {
+	text-align: center;
+}
+
+#teacherview table {
+	margin: 0px auto;
+}
+
+#teacherview table th {
+
+	border-style: solid;
+	border-width: thin;
+}
+
+#teacherview table td {
+	border-style: solid;
+	border-width: thin;
+}
+
+#teacherview table td:first-child {
+	text-align: left;
+	padding: 10px;
+}
+
+#teacherview table td:nth-child(n+2) {
+	text-align: center;
+	padding: 5px;
 }

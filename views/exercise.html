@@ -1,56 +1,76 @@
 ﻿<div data-options="dxView : { name: 'exercise', title: 'Exercise' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxScrollView: {}">
+        	<br>
         	<div id="teacherview">
+        		<h1>Start Exercise</h1>
         		<div class="dx-fieldset">
         			<div class="dx-field">
-				        <div data-bind="dxNumberBox: {
+        				<div class="dx-field-label">Aufgaben</div>
+				        <div class="dx-field-value" data-bind="dxNumberBox: {
 				            min: 1,
 				            max: 100,
 				            value: tasknumbers,
-				            placeholder: 'Aufgaben'
+				            width: 100,
+				            enterKeyAction: startExercise
 				        }">
 				        </div>
         			</div>
-        			<div class="dx-field">
-        				<div data-bind="dxButton: { text: 'Click me', clickAction: startExercise }"></div>
+        			<div style="text-align:right;" class="dx-field">
+        				<div data-bind="dxButton: { text: 'Start', clickAction: startExercise, icon: 'runner', width: 100 }"></div>
         			</div>
         		</div>
+
         		<hr>
         		<div id="votedstudentstable" >
-        			<table width="80%",ruasdles="all">
-	        			<colgroup>
-						    <col >
-						    <col>
-						    <col >
-						    <col >
-					 	</colgroup>
+        			<table width="90%">
 				 		<thead>
 					  		<tr>
-					  			<th >Name</th>
+					  			<th>Name</th>
 					  			<th>1</th>
 					  			<th>2</th>
 					  			<th>3</th>
+					  			<th>4</th>
+					  			<th>5</th>
+					  			<th>6</th>
+					  			<th>7</th>
+					  			<th>8</th>
 					  		</tr>
 				 		</thead>
+				 		<tr height="10px"></tr>
 				 		<tbody>
 	        				<tr>
-	        					<th>Gaertner, Kilian</th>
-	        					<th>X</th>
-	        					<th>O</th>
-	        					<th>X</th>
+	        					<td>Gaertner,<br>Kilian</td>
+	        					<td>X</td>
+	        					<td>-</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>-</td>
+	        					<td>X</td>
+	        					<td>X</td>
 	        				</tr>
 	        				<tr>
-	        					<th>Engelhart, Julien</th>
-	        					<th>X</th>
-	        					<th>X</th>
-	        					<th>X</th>
+	        					<td>Engelhart,<br>Julien</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>-</td>
+	        					<td>X</td>
+	        					<td>X</td>
 	        				</tr>
 	        				<tr>
-	        					<th>Dosenkohl, Hans</th>
-	        					<th>O</th>
-	        					<th>O</th>
-	        					<th>O</th>
+	        					<td>Dosenkohl,<br>Hans</td>
+	        					<td>-</td>
+	        					<td>-</td>
+	        					<td>-</td>
+	        					<td>X</td>
+	        					<td>X</td>
+	        					<td>-</td>
+	        					<td>X</td>
+	        					<td>X</td>
 	        				</tr>
         				</tbody>
         			</table>
@@ -60,7 +80,6 @@
 
     		<div id="studentview">
     			<div>
-    				<br>
     				<h1 style="text-align: center;">Aufgabe</h1>
     				<hr>
     				<br>
