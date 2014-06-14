@@ -16,8 +16,8 @@ WeVote.exercise = function (params) {
     };
 
     function viewShown() {
-        $("#teacherview").toggle(isTeacher());
-        $("#studentview").toggle(!isTeacher());
+        $("#teacherview").toggle(GLOBAL_VARIABLES.isTeacher());
+        $("#studentview").toggle(!GLOBAL_VARIABLES.isTeacher());
     }
 
     var viewModel = {
