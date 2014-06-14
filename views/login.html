@@ -1,0 +1,26 @@
+<div data-options="dxView : { name: 'login', title: 'Login' } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxScrollView: {}">
+        
+        <div class="dx-fieldset">
+        <div id = "field1" class="dx-field">    
+        <div class="dx-field-label">Username</div>    
+        <div class="dx-field-value" data-bind="dxTextBox: { maxLength: length, placeholder: lengthDescription }"></div>  
+        </div>
+
+        <div id = "field2" class="dx-field">
+        <div class="dx-field-label">Password</div>
+        <div class="dx-field-value" data-bind="dxTextBox: { mode: passMode, placeholder: secretDescription }"></div> 
+        </div> 
+
+     
+        <div id ="log" class="button" data-bind="dxButton:{text:'Register', clickAction: buttonClicked ,icon: 'user'}"></div>
+        <div id ="reg" class="button" data-bind="dxButton:{text:'Login', icon: 'key', }"></div>
+        </div>
+        <!-- <div style="text-align: center"> -->
+
+        <!-- </div> -->
+
+        </div>
+    </div>
+</div>
