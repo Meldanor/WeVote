@@ -1,1 +1,7 @@
-﻿
+﻿table td:first-child {
+	text-align: left;
+	vertical-align: middle;
+}
+table td:nth-child(2) {
+	text-align: right;
+}

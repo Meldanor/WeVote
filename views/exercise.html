@@ -56,29 +56,39 @@
         			</table>
         		</div>
         	</div>
-    		<div id="studentview">
 
-    			<table style="margin: 0px auto;" width="50%" >
-	        			<colgroup>
-						    <col>
-						    <col>
-					 	</colgroup>
-				 		<tbody>
-	        				<tr>
-	        					<th>1</th>
-	        					<th><div data-bind="dxCheckBox: { checked: checkedTask1 }"></div></th>
-	        				</tr>
-	        				<tr>
-	        					<th>2</th>
-	        					<th><div data-bind="dxCheckBox: { checked: checkedTask2 }"></div></th>
-	        				</tr>
-	        				<tr>
-	        					<th>3</th>
-	        					<th><div data-bind="dxCheckBox: { checked: checkedTask3 }"></div></th>
-	        				</tr>
-        				</tbody>
-    			</table>
-    			<div style="text-align:center;" data-bind="dxButton: { text: 'Click me', clickAction: buttonClicked }"></div>
+
+    		<div id="studentview">
+    			<div>
+    				<br>
+    				<h1 style="text-align: center;">Aufgabe</h1>
+    				<hr>
+    				<br>
+	    			<table style="margin: 0px auto;" width="90%" >
+		        			<colgroup>
+							    <col>
+							    <col>
+						 	</colgroup>
+					 		<tbody>
+		        				<tr>
+		        					<td>Aufgabe 1</td>
+		        					<td><div  data-bind="dxCheckBox: { checked: checkedTask1, height: 50, width: 50}"></div></td>
+		        				</tr>
+		        				<tr>
+		        					<td>Aufgabe 2</td>
+		        					<td><div data-bind="dxCheckBox: { checked: checkedTask2, height: 50, width: 50}"></div></td>
+		        				</tr>
+		        				<tr>
+		        					<td>Aufgabe 3</td>
+		        					<td><div data-bind="dxCheckBox: { checked: checkedTask3, height: 50, width: 50}"></div></td>
+		        				</tr>
+	        				</tbody>
+	    			</table>
+	    			<br>
+	    			<div style="text-align:right; width:90%">
+	    				<div data-bind="dxButton: { text: 'Vote', clickAction: submit, icon: 'comment',width: 75 }"></div>
+	    			</div>
+    			</div>
     		</div>
       </div>
   </div>
