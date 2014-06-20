@@ -26,12 +26,12 @@
 
         <div id = "regField1" class="dx-field">    
         <div class="dx-field-label">Passwort</div>    
-        <div class="dx-field-value" data-bind="dxTextBox: { }"></div>  
+        <div class="dx-field-value" data-bind="dxTextBox: { mode: 'password', placeholder: 'type a password' }"></div>  
         </div>
 
         <div id = "regField2" class="dx-field">
         <div class="dx-field-label">Passwort w.</div>
-        <div class="dx-field-value" data-bind="dxTextBox: { }"></div> 
+        <div class="dx-field-value" data-bind="dxTextBox: {mode: 'password', placeholder: 'repeat password' }"></div> 
         </div> 
 
         <div id ="regButton" class="button" data-bind="dxButton:{text:'Register', clickAction: buttonClicked ,icon: 'user'}"></div>

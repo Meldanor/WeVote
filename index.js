@@ -35,7 +35,7 @@
             ]
         });
         
-        WeVote.app.router.register(":view", { view: "overview" });
+        WeVote.app.router.register(":view", { view: "login" });
         WeVote.app.navigate();
     });
     

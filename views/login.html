@@ -1,10 +1,49 @@
 <script type="text/javascript">
-    length = 10;
-    lengthDescription = "10 characters maximum";
- 
-    passMode = "password";
-    secretDescription = "type a password";
+    WeVote.login = function (params) {
+
+    var buttonDisable = ko.observable(true);
+    var pw = ko.observable('');
+    var uname = ko.observable('');
+    var changeField1 = function()
+    {
+        
+        if(viewModel.uname() != "")
+            buttonDisable = viewModel.buttonDisable(false);
+        else
+            buttonDisable = viewModel.buttonDisable(true);
+    };
+
+   /* var loginButton = function()
+    {
+        alert('Button Clicked!');
+        var isCorrect = false;
+        for(var i = 0; i < usernames.length; i++)
+        {
+            if(viewModel.uname() == usernames[i])
+            {
+                if(viewModel.pw() == pwds[i])
+                    isCorrect = true;
+            }
+        }
+
+        if(isCorrect)
+            DevExpress.ui.notify("Login correct!", "success", 1000);
+        else
+            DevExpress.ui.notify("Login incorrect", "error", 1000);
+    };*/
+
+    var viewModel = {
+        buttonDisable: buttonDisable,
+        pw : pw,
+        uname : uname,
+        changeField1 : changeField1
+      
+    };
+    return viewModel;
+};
+
 </script>
+
 
 <div data-options="dxView : { name: 'login', title: 'Login' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
@@ -13,17 +52,17 @@
         <div class="dx-fieldset">
         <div id = "field1" class="dx-field">    
         <div class="dx-field-label">Username</div>    
-        <div class="dx-field-value" data-bind="dxTextBox: { maxLength: 10, placeholder: 'max 10 chars' }"></div>  
+        <div class="dx-field-value" data-bind="dxTextBox: { value: uname,  maxLength: 10, placeholder: 'max 10 chars', valueUpdateAction: changeField1 }"></div>  
         </div>
 
         <div id = "field2" class="dx-field">
         <div class="dx-field-label">Password</div>
-        <div class="dx-field-value" data-bind="dxTextBox: { mode: 'password', placeholder: 'type a password' }"></div> 
+        <div class="dx-field-value" data-bind="dxTextBox: { value: pw, mode: 'password' , placeholder: 'type a password', valueUpdateAction: changeField1 }"></div> 
         </div> 
 
      
-        <div id ="log" class="button" data-bind="dxButton:{text:'Register', clickAction: buttonClicked ,icon: 'user'}"></div>
-        <div id ="reg" class="button" data-bind="dxButton:{text:'Login', icon: 'key', }"></div>
+        <div id ="reg" class="button" data-bind="dxButton:{ text:'Register',icon: 'user'}"></div>
+        <div id ="log" class="button" data-bind="dxButton:{ disabled: buttonDisable, text:'Login', icon: 'key', }"></div>
         </div>
         <!-- <div style="text-align: center"> -->
 

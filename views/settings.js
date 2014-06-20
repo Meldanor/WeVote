@@ -29,5 +29,6 @@
         password: password
 
     };
+    
     return viewModel;
 };
