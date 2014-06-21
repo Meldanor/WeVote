@@ -1,7 +1,7 @@
 ﻿popupVisible = ko.observable(false);
 
 showVotingPopup = function(){
-    popupVisible(true);
+    WeVote.app.navigate('exercise',{target: 'current'});
 };
 
 vote = function(){

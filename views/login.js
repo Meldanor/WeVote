@@ -22,6 +22,7 @@ WeVote.login = function (params) {
 
         if(isCorrect) {
             isLoggedIn = true;
+            WeVote.app.navigate("overview",{target: 'current'});
             DevExpress.ui.notify("Login successfull!", "success", 1000);
         }
         else

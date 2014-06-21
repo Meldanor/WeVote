@@ -35,7 +35,6 @@
             ]
         });
 
-
         WeVote.app.router.register(":view", { view: "login" });
         WeVote.app.navigate('login');
 
