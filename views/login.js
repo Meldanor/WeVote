@@ -1,40 +1,44 @@
 WeVote.login = function (params) {
 
-    //var askingFeedback = ko.observable(false);
 
-    //var username = ko.observable('');
-    //var password = ko.observable('');
+    var buttonDisable = ko.observable(true);
+    var pw = ko.observable('');
+    var uname = ko.observable('');
 
-   /* function changeAskingFeedback() {
-        DevExpress.ui.notify('Asking for Feedback Enabled: '+ askingFeedback(), 'info', 1000);
-    };*/
+    var changeField1 = function() {
+        if(uname() != "" && pw() != "")
+            buttonDisable = viewModel.buttonDisable(false);
+        else
+            buttonDisable = viewModel.buttonDisable(true);
+    };
+
+    var loginButton = function() {
+        var isCorrect = false;
+        for(var i = 0; i < usernames.length; ++i) {
+            if (uname() == usernames[i] && pw() == pwds[i])
+                isCorrect = true;
+            
+        }
+
+        if(isCorrect) {
+            isLoggedIn = true;
+            DevExpress.ui.notify("Login successfull!", "success", 1000);
+        }
+        else
+            DevExpress.ui.notify("Username or password incorrect!", "error", 1000);
+    };
+
+    var regButton = function() {
+        WeVote.app.navigate("registry");
+    };
 
     var viewModel = {
-/*
-        length: 10,
-        lengthDescription: "10 char max",
-        passMode: passMode "password",
-        secretDescription: "type a password"*/
-
+        buttonDisable: buttonDisable,
+        pw : pw,
+        uname : uname,
+        changeField1 : changeField1,
+        loginButton : loginButton,
+        regButton : regButton
     };
     return viewModel;
-};
-
-/*
-length = 10;
-lengthDescription = "10 characters maximum";
- 
-passMode = "password";
-secretDescription = "type a password";
- 
-readonly = true;
-readonlyDescription = "read-only text box";
-*/
-
-buttonClicked1 = function(){
-    DevExpress.ui.notify("Login button pressed", "success", 1000);
-};
-
-buttonClicked2 = function(){
-    DevExpress.ui.notify("Register button pressed", "success", 1000);
 };

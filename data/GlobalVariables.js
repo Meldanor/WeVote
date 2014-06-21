@@ -5,10 +5,10 @@ var GLOBAL_VARIABLES = {
 var isExerciseStarted = false;
 var numberOfExerciseTasks = 0;
 
-var navBarDisabled = ko.observable(true);
+var isLoggedIn = false;
 
 var usernames = ["kilian", "julien", "haXXor1337"];
-var pwds      = ["melanie", "juliane", "qwerty"];
+var pwds      = ["mel", "juliane", "qwerty"];
 
 function IsNumeric(input) {
     return (input - 0) == input && (''+input).replace(/^\s+|\s+$/g, "").length > 0;
