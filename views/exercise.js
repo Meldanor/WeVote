@@ -36,6 +36,9 @@ WeVote.exercise = function (params) {
         this.isSubmit = function (index) {
             return this.taskArray[index];
         };
+        this.getSize = function () {
+            return this.taskArray.length;
+        };
     };
 
     var tasknumbers = ko.observable();
@@ -90,9 +93,7 @@ WeVote.exercise = function (params) {
     };
 
     function submit () {
-        var name = "Hans";
-        console.log(numberOfExerciseTasks);
-        var sub = new Submission(name, numberOfExerciseTasks);
+        var sub = new Submission(currentUser.getName(), numberOfExerciseTasks);
         for (var i = 0 ; i < numberOfExerciseTasks; ++i) {
             var checkBox = $('#checkBox'+ i).dxCheckBox("instance");
             var isChecked = checkBox.option('checked');
@@ -106,11 +107,13 @@ WeVote.exercise = function (params) {
         DevExpress.ui.notify('Submited', 'success', 2000);
     };
 
+    var oldStudentContent = null;
+
     function viewShown() {
         $("#teacherview").toggle(GLOBAL_VARIABLES.isTeacher());
         $("#studentview").toggle(!GLOBAL_VARIABLES.isTeacher());
 
-        if (!GLOBAL_VARIABLES.isTeacher()) {
+        if (GLOBAL_VARIABLES.isTeacher()) {
 
             $("#votedstudentstable").toggle(isExerciseStarted);
             if (isExerciseStarted) {
@@ -120,6 +123,10 @@ WeVote.exercise = function (params) {
                     showSubmissionInTable(table, submissions[i]);
                 }
             }
+        } else {
+
+            $("#studentviewrunningexercise").toggle(isExerciseStarted);
+            $("#studentviewnoexercise").toggle(!isExerciseStarted);
         }
     };
 
@@ -127,7 +134,7 @@ WeVote.exercise = function (params) {
         table.append('<tr>');
 
         table.append('<td> '+submission.getName()+'</td>');
-        for (var i = 0 ; i < 8; ++i) {
+        for (var i = 0 ; i < submission.getSize(); ++i) {
 
             var sign = submission.isSubmit(i) ? 'X' : '-';
             table.append('<td> '+sign+'</td>');
