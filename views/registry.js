@@ -31,9 +31,12 @@
         else
         {
             DevExpress.ui.notify("Registration successful!", "success", 1000);
-            WeVote.app.navigate("overview");
-        }  
-
+            usernames.push(viewModel.username());
+            pwds.push(viewModel.pw());
+            currentUser = new User(viewModel.username());
+            WeVote.app.navigate("login");
+        } 
+ 
     }
 
     var viewModel = {

@@ -36,26 +36,8 @@
         });
 
         WeVote.app.router.register(":view", { view: "login" });
+        currentUser = new User("Kilian");
         WeVote.app.navigate('login');
-
-        WeVote.app.navigating.add(function(e) {
-
-          // Start
-          if (typeof e.currentUri === 'undefined' && e.uri === 'login')
-              return;
-          // Go to registry
-          if (e.uri === 'registry')
-              return;
-          if (e.currentUri === 'registry' && e.uri === 'login')
-            return;
-
-          if (!isLoggedIn) {
-              e.cancel = true;
-              DevExpress.ui.notify("You are not logged in!", "error", 1000);
-          }
-        });
-        
-
     });
     
 })();

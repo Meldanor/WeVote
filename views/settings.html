@@ -1,4 +1,4 @@
-﻿<div data-options="dxView : { name: 'settings', title: 'Settings' } " >
+<div data-options="dxView : { name: 'settings', title: 'Settings' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div data-bind="dxScrollView: {}">
         <div class="dx-fieldset">
@@ -10,24 +10,10 @@
 				<div class="dx-field-label" style="width:50%">Is Teacher</div>
 				<div class="dx-field-value" data-bind="dxSwitch: { value: GLOBAL_VARIABLES.isTeacher}"></div>
 			</div>
+			<div class="dx-field">
+				<div class="dx-field-label" id="usernamelabel" ></div>
+				<div class="dx-field-value" data-bind="dxButton: {text:'Logout', clickAction: logout, icon: 'key'}" style="width:30%"></div>
+			</div>
 		</div>
-		<hr>
-
-		<center> <div style="margin: 0 auto;" class="button" data-bind="dxButton:{text:'Login', clickAction: popup.showPopup, icon: 'key'}"></div> </center>
-		
-	    <div data-bind="dxPopup: { height: 'auto', visible: popup.visible }">
-	        <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
-	            <h2>Login</h2>
-	        </div>
-	        <div data-options="dxTemplate : { name: 'content' } ">
-	            <div class="login-form">
-	                <div data-bind="dxTextBox: { placeholder: 'Login', value: username }"></div>
-	                <div data-bind="dxTextBox: { mode: 'password', placeholder: 'Password', value: password }"></div>                            
-	                <div style="margin-right: 10px" data-bind="dxButton: { text: 'Sign in', clickAction: popup.hidePopup }"></div>                   
-	                <div style="margin-left: 10px"data-bind="dxButton: { text: 'Cancel', clickAction: popup.hidePopup }"></div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
     </div>
 </div>

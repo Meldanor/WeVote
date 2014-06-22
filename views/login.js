@@ -1,6 +1,5 @@
 WeVote.login = function (params) {
 
-
     var buttonDisable = ko.observable(true);
     var pw = ko.observable('');
     var uname = ko.observable('');
@@ -21,8 +20,9 @@ WeVote.login = function (params) {
         }
 
         if(isCorrect) {
+            currentUser = new User(uname());
             isLoggedIn = true;
-            WeVote.app.navigate("overview",{target: 'current'});
+            WeVote.app.navigate("overview",{target: 'blank', root: true});
             DevExpress.ui.notify("Login successfull!", "success", 1000);
         }
         else

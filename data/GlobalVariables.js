@@ -10,6 +10,4 @@ var isLoggedIn = false;
 var usernames = ["kilian", "julien", "haXXor1337"];
 var pwds      = ["mel", "juliane", "qwerty"];
 
-function IsNumeric(input) {
-    return (input - 0) == input && (''+input).replace(/^\s+|\s+$/g, "").length > 0;
-};
+var currentUser = null;
