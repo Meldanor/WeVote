@@ -3,6 +3,8 @@ var GLOBAL_VARIABLES = {
 };
 
 var isExerciseStarted = false;
+var isExerciseEnded = false;
+
 var numberOfExerciseTasks = 0;
 
 var isLoggedIn = false;

@@ -16,13 +16,9 @@
 				        </div>
         			</div>
         			<div style="text-align:right;" class="dx-field">
-        				<div data-bind="dxButton: { text: 'Start', clickAction: startExercise, icon: 'runner', width: 100 }"></div>
+        				<div id="startexercisebutton" data-bind="dxButton: { text: 'Start', clickAction: startExercise, icon: 'runner', width: 100 }"></div>
         			</div>
-        			<!-- TODO: Implement stop button -->
-<!--         			<div style="text-align:right;" class="dx-field">
-        				<div data-bind="dxButton: { text: 'Stop', clickAction: startExercise, icon: 'runner', width: 100 }"></div>
-        			</div>
- -->        		</div>
+                </div>
 
         		<hr>
         		<div id="votedstudentstable" >
@@ -59,6 +55,13 @@
     			</div>
                 <div id ="studentviewnoexercise">
                     <h1 style="text-align: center;">No Exercise at the moment!</h1>
+                    <br>
+
+                    <div id = "rateexercise" style="width:50%; margin-left: 25%; margin-right: 25%">
+                        <p style="text-align: center">Rate your last exercise</p>
+                        <div style="width: 40%" data-bind="dxButton: { text: 'Good', clickAction: submit, icon: 'arrowup'}"></div>
+                        <div style="width: 40%" data-bind="dxButton: { text: 'Bad', clickAction: submit, icon: 'arrowdown' }"></div>
+                    </div>
                 </div>
     		</div>
       </div>

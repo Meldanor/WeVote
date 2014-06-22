@@ -44,21 +44,27 @@ WeVote.exercise = function (params) {
     var tasknumbers = ko.observable();
 
     function startExercise() {
-        if (!IsNumeric(tasknumbers())) {
-            alert("HALT!");
-            return;
-        }
-        if (tasknumbers() <= 0) {
-            DevExpress.ui.notify("Exercise must have at least one exercise!", 'error', 2000);
-            return;
-        }
-        DevExpress.ui.notify('Exercise startet with ' + tasknumbers() + ' tasks', 'success', 2000);
+        $("#votedstudentstable").toggle(!isExerciseStarted);
+        if (!isExerciseStarted) {
+            if (tasknumbers() <= 0) {
+                DevExpress.ui.notify("Exercise must have at least one exercise!", 'error', 2000);
+                return;
+            }
+            DevExpress.ui.notify('Exercise startet with ' + tasknumbers() + ' tasks', 'success', 2000);
 
-        numberOfExerciseTasks = tasknumbers();
-        isExerciseStarted = true;
-        $("#votedstudentstable").toggle(isExerciseStarted);
-        prepareVotingTable();
-        prepareToVoteTable();
+            numberOfExerciseTasks = tasknumbers();
+            isExerciseStarted = true;
+            isExerciseEnded = false;
+            prepareVotingTable();
+            prepareToVoteTable();
+            $('#startexercisebutton').dxButton('instance').option('text','Stop');
+            $('#startexercisebutton').dxButton('instance').option('icon','close');
+        } else {
+            $('#startexercisebutton').dxButton('instance').option('text','Start');
+            $('#startexercisebutton').dxButton('instance').option('icon','runner');
+            isExerciseStarted = false;
+            isExerciseEnded = true;
+        }
     };
 
     function prepareVotingTable() {
@@ -107,8 +113,6 @@ WeVote.exercise = function (params) {
         DevExpress.ui.notify('Submited', 'success', 2000);
     };
 
-    var oldStudentContent = null;
-
     function viewShown() {
         $("#teacherview").toggle(GLOBAL_VARIABLES.isTeacher());
         $("#studentview").toggle(!GLOBAL_VARIABLES.isTeacher());
@@ -124,7 +128,7 @@ WeVote.exercise = function (params) {
                 }
             }
         } else {
-
+            $('#rateexercise').toggle(isExerciseEnded);
             $("#studentviewrunningexercise").toggle(isExerciseStarted);
             $("#studentviewnoexercise").toggle(!isExerciseStarted);
         }
