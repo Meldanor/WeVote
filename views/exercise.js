@@ -41,7 +41,7 @@ WeVote.exercise = function (params) {
         };
     };
 
-    var tasknumbers = ko.observable();
+    var tasknumbers = ko.observable(1);
 
     function startExercise() {
         $("#votedstudentstable").toggle(!isExerciseStarted);
